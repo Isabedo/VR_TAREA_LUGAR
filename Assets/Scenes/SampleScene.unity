@@ -6672,6 +6672,9 @@ GameObject:
   - component: {fileID: 316917635}
   - component: {fileID: 316917634}
   - component: {fileID: 316917633}
+  - component: {fileID: 828956303}
+  - component: {fileID: 828956300}
+  - component: {fileID: 828956304}
   m_Layer: 0
   m_Name: cabinets_door_1
   m_TagString: Untagged
@@ -6694,11 +6697,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.643754, y: 26.218891, z: 61.565067}
+  m_Size: {x: 3.0, y: 26.218891, z: 61.565067}
   m_Center: {x: 0.07169247, y: 0.21730964, z: -0.20705464}
 --- !u!23 &316917634
 MeshRenderer:
@@ -6765,14 +6768,64 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316917632}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.8526425, y: 0.53906476, z: 3.4688735}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.436278, y: -14.925066, z: -1.019}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 828956299}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 685759153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &828956303
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316917632}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &828956304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316917632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.Grabbable
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 828956300}
+  _twoGrabTransformer: {fileID: 0}
+  _targetTransform: {fileID: 316917636}
+  _maxGrabPoints: 1
+  _rigidbody: {fileID: 828956303}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 0
+  _forceKinematicDisabled: 0
 --- !u!1 &319009009
 GameObject:
   m_ObjectHideFlags: 0
@@ -14990,8 +15043,72 @@ Transform:
   - {fileID: 1294705237}
   - {fileID: 575070520}
   - {fileID: 276005636}
+  - {fileID: 990000002}
+  - {fileID: 990000004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &990000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990000002}
+  m_Layer: 0
+  m_Name: Hinge_Door_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &990000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 12.436278, y: -27.4187, z: -1.019}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685759153}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &990000003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990000004}
+  m_Layer: 0
+  m_Name: Hinge_Door_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &990000004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990000003}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 12.043547, y: 27.4813, z: -1.018998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685759153}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &688270125
 GameObject:
   m_ObjectHideFlags: 0
@@ -16855,7 +16972,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 623a1f940aa801445980706fabc4fd14, type: 2}
+  - {fileID: 2100000, guid: ba1d9f06548fda348b12ae758c4dda20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16886,7 +17003,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793001907}
-  m_Mesh: {fileID: -460986762995860407, guid: 73969e60fb695da499815fb917f2db07, type: 3}
+  m_Mesh: {fileID: -2816330346030965602, guid: 73969e60fb695da499815fb917f2db07, type: 3}
 --- !u!4 &793001910
 Transform:
   m_ObjectHideFlags: 0
@@ -16895,8 +17012,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793001907}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29744622, y: 0.6415028, z: -0.6415028, w: 0.29744613}
-  m_LocalPosition: {x: 1.8141848, y: 0.529, z: 4.138848}
+  m_LocalRotation: {x: -0.29673555, y: -0.64183176, z: 0.64183176, w: -0.29673558}
+  m_LocalPosition: {x: 1.8136742, y: 0.52887464, z: 4.1345227}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16907,7 +17024,7 @@ Transform:
   - {fileID: 1235363138}
   - {fileID: 1134758492}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -130.248}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -130.382}
 --- !u!1 &796794796
 GameObject:
   m_ObjectHideFlags: 0
@@ -17528,7 +17645,6 @@ GameObject:
   - component: {fileID: 828956299}
   - component: {fileID: 828956302}
   - component: {fileID: 828956301}
-  - component: {fileID: 828956300}
   m_Layer: 0
   m_Name: ISDK_HandGrabInteraction
   m_TagString: Untagged
@@ -17557,13 +17673,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828956298}
+  m_GameObject: {fileID: 316917632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 124f4583f657475469a45ab6fca8f921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.OneGrabRotateTransformer
-  _pivotTransform: {fileID: 0}
+  _pivotTransform: {fileID: 990000002}
   _rotationAxis: 1
   _constraints:
     MinAngle:
@@ -17588,8 +17704,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 828956304}
+  _rigidbody: {fileID: 828956303}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -17610,8 +17726,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 828956304}
+  _rigidbody: {fileID: 828956303}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.5
@@ -19706,7 +19822,6 @@ GameObject:
   - component: {fileID: 905636825}
   - component: {fileID: 905636828}
   - component: {fileID: 905636827}
-  - component: {fileID: 905636826}
   m_Layer: 0
   m_Name: ISDK_HandGrabInteraction
   m_TagString: Untagged
@@ -19735,21 +19850,21 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905636824}
+  m_GameObject: {fileID: 1139358786}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 124f4583f657475469a45ab6fca8f921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.OneGrabRotateTransformer
-  _pivotTransform: {fileID: 0}
+  _pivotTransform: {fileID: 990000004}
   _rotationAxis: 1
   _constraints:
     MinAngle:
       Constrain: 1
-      Value: 0
+      Value: -105
     MaxAngle:
       Constrain: 1
-      Value: 105
+      Value: 0
 --- !u!114 &905636827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19766,8 +19881,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 905636830}
+  _rigidbody: {fileID: 905636829}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -19788,8 +19903,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 905636830}
+  _rigidbody: {fileID: 905636829}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
     _positionRotationWeight: 0.5
@@ -33187,6 +33302,9 @@ GameObject:
   - component: {fileID: 1139358789}
   - component: {fileID: 1139358788}
   - component: {fileID: 1139358787}
+  - component: {fileID: 905636829}
+  - component: {fileID: 905636826}
+  - component: {fileID: 905636830}
   m_Layer: 0
   m_Name: cabinets_door_2
   m_TagString: Untagged
@@ -33209,11 +33327,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9066105, y: 27.616241, z: 62.05482}
+  m_Size: {x: 3.0, y: 27.616241, z: 62.05482}
   m_Center: {x: -0.19954443, y: 0.9214388, z: -0.41466957}
 --- !u!23 &1139358788
 MeshRenderer:
@@ -33280,14 +33398,64 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139358786}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.8565698, y: 0.53906476, z: 3.7709627}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.043547, y: 15.283853, z: -1.018998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 905636825}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 685759153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &905636829
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139358786}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &905636830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139358786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.Grabbable
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 905636826}
+  _twoGrabTransformer: {fileID: 0}
+  _targetTransform: {fileID: 1139358790}
+  _maxGrabPoints: 1
+  _rigidbody: {fileID: 905636829}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 0
+  _forceKinematicDisabled: 0
 --- !u!1 &1142927399
 GameObject:
   m_ObjectHideFlags: 0
@@ -43679,6 +43847,7 @@ GameObject:
   - component: {fileID: 1556228142}
   - component: {fileID: 1556228141}
   - component: {fileID: 1556228140}
+  - component: {fileID: 985745205}
   - component: {fileID: 1556228139}
   m_Layer: 0
   m_Name: cabinets2_door_2
@@ -43702,13 +43871,13 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 985745205}
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 1556228144}
-  _maxGrabPoints: -1
+  _maxGrabPoints: 1
   _rigidbody: {fileID: 1556228140}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _forceKinematicDisabled: 0
 --- !u!54 &1556228140
 Rigidbody:
@@ -43735,7 +43904,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1556228141
 BoxCollider:
@@ -43756,7 +43925,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.99079496, y: 26.178858, z: 61.031467}
+  m_Size: {x: 2.0, y: 26.178858, z: 61.031467}
   m_Center: {x: 0.33619994, y: 0.27086437, z: -0.6869465}
 --- !u!23 &1556228142
 MeshRenderer:
@@ -43823,14 +43992,46 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556228138}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.29673555, y: -0.64183176, z: 0.64183176, w: -0.29673558}
-  m_LocalPosition: {x: 1.6194113, y: 0.53906476, z: 4.1364646}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.436281, y: -14.925058, z: -1.019002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1370691579}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 793001910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985745205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556228138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9597e632dfbca247bcf65e49c67078e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.OneGrabTranslateTransformer
+  _constraints:
+    ConstraintsAreRelative: 1
+    MinX:
+      Constrain: 1
+      Value: 0
+    MaxX:
+      Constrain: 1
+      Value: 0
+    MinY:
+      Constrain: 1
+      Value: -26.2
+    MaxY:
+      Constrain: 1
+      Value: 0
+    MinZ:
+      Constrain: 1
+      Value: 0
+    MaxZ:
+      Constrain: 1
+      Value: 0
 --- !u!1 &1565014726
 GameObject:
   m_ObjectHideFlags: 0
@@ -48786,6 +48987,7 @@ GameObject:
   - component: {fileID: 1778348190}
   - component: {fileID: 1778348189}
   - component: {fileID: 1778348188}
+  - component: {fileID: 480366756}
   - component: {fileID: 1778348187}
   m_Layer: 0
   m_Name: cabinets2_door_1
@@ -48809,13 +49011,13 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 480366756}
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 1778348192}
-  _maxGrabPoints: -1
+  _maxGrabPoints: 1
   _rigidbody: {fileID: 1778348188}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _forceKinematicDisabled: 0
 --- !u!54 &1778348188
 Rigidbody:
@@ -48842,7 +49044,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1778348189
 BoxCollider:
@@ -48863,7 +49065,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8748592, y: 26.028532, z: 61.371376}
+  m_Size: {x: 2.0, y: 26.028532, z: 61.371376}
   m_Center: {x: 0.24163277, y: 0.22893843, z: -0.63822865}
 --- !u!23 &1778348190
 MeshRenderer:
@@ -48930,14 +49132,46 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778348186}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.29673555, y: -0.64183176, z: 0.64183176, w: -0.29673558}
-  m_LocalPosition: {x: 1.852092, y: 0.53906476, z: 3.9437656}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.043523, y: 15.283821, z: -1.019001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 654144489}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 793001910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480366756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778348186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9597e632dfbca247bcf65e49c67078e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.OneGrabTranslateTransformer
+  _constraints:
+    ConstraintsAreRelative: 1
+    MinX:
+      Constrain: 1
+      Value: 0
+    MaxX:
+      Constrain: 1
+      Value: 0
+    MinY:
+      Constrain: 1
+      Value: 0
+    MaxY:
+      Constrain: 1
+      Value: 26.2
+    MinZ:
+      Constrain: 1
+      Value: 0
+    MaxZ:
+      Constrain: 1
+      Value: 0
 --- !u!65 &1779652011
 BoxCollider:
   m_ObjectHideFlags: 0
